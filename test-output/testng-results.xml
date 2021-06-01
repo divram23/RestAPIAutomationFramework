@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="10" passed="10">
+  <reporter-output>
+  </reporter-output>
+  <suite name="All Test Suite" duration-ms="4080" started-at="2021-06-01T11:36:00 IST" finished-at="2021-06-01T11:36:04 IST">
+    <groups>
+    </groups>
+    <test name="C:/Users/pc/IdeaProjects/RestAPIAutomationFramework" duration-ms="4080" started-at="2021-06-01T11:36:00 IST" finished-at="2021-06-01T11:36:04 IST">
+      <class name="TestSuites.NegativeTests">
+        <test-method status="PASS" signature="setup()[pri:0, instance:TestSuites.NegativeTests@4b952a2d]" name="setup" is-config="true" duration-ms="1535" started-at="2021-06-01T11:36:00 IST" finished-at="2021-06-01T11:36:02 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="validateDeletingNonExistingCustomer()[pri:0, instance:TestSuites.NegativeTests@4b952a2d]" name="validateDeletingNonExistingCustomer" duration-ms="2129" started-at="2021-06-01T11:36:02 IST" finished-at="2021-06-01T11:36:04 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateDeletingNonExistingCustomer -->
+        <test-method status="PASS" signature="verifyCreatingExistingCustomer()[pri:0, instance:TestSuites.NegativeTests@4b952a2d]" name="verifyCreatingExistingCustomer" duration-ms="91" started-at="2021-06-01T11:36:04 IST" finished-at="2021-06-01T11:36:04 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCreatingExistingCustomer -->
+        <test-method status="PASS" signature="verifyUpdatingNonExistingCustomer()[pri:0, instance:TestSuites.NegativeTests@4b952a2d]" name="verifyUpdatingNonExistingCustomer" duration-ms="37" started-at="2021-06-01T11:36:04 IST" finished-at="2021-06-01T11:36:04 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUpdatingNonExistingCustomer -->
+      </class> <!-- TestSuites.NegativeTests -->
+      <class name="TestSuites.PositiveTests">
+        <test-method status="PASS" signature="setup()[pri:0, instance:TestSuites.PositiveTests@5025a98f]" name="setup" is-config="true" duration-ms="5" started-at="2021-06-01T11:36:04 IST" finished-at="2021-06-01T11:36:04 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="verifyCreateAndRetrievingCustomerRecord()[pri:0, instance:TestSuites.PositiveTests@5025a98f]" name="verifyCreateAndRetrievingCustomerRecord" duration-ms="55" started-at="2021-06-01T11:36:04 IST" finished-at="2021-06-01T11:36:04 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCreateAndRetrievingCustomerRecord -->
+        <test-method status="PASS" signature="verifyStatusCodeGETCustomers()[pri:0, instance:TestSuites.PositiveTests@5025a98f]" name="verifyStatusCodeGETCustomers" duration-ms="30" started-at="2021-06-01T11:36:04 IST" finished-at="2021-06-01T11:36:04 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyStatusCodeGETCustomers -->
+        <test-method status="PASS" signature="verifyStatusCodeGETSingleCustomer()[pri:1, instance:TestSuites.PositiveTests@5025a98f]" name="verifyStatusCodeGETSingleCustomer" duration-ms="20" started-at="2021-06-01T11:36:04 IST" finished-at="2021-06-01T11:36:04 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyStatusCodeGETSingleCustomer -->
+        <test-method status="PASS" signature="verifyStatusCodePOSTCreate()[pri:2, instance:TestSuites.PositiveTests@5025a98f]" name="verifyStatusCodePOSTCreate" duration-ms="20" started-at="2021-06-01T11:36:04 IST" finished-at="2021-06-01T11:36:04 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyStatusCodePOSTCreate -->
+        <test-method status="PASS" signature="verifyStatusCodePUTUpdateCustomer()[pri:3, instance:TestSuites.PositiveTests@5025a98f]" name="verifyStatusCodePUTUpdateCustomer" duration-ms="28" started-at="2021-06-01T11:36:04 IST" finished-at="2021-06-01T11:36:04 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyStatusCodePUTUpdateCustomer -->
+        <test-method status="PASS" signature="verifyStatusCodeDELETECustomer()[pri:4, instance:TestSuites.PositiveTests@5025a98f]" name="verifyStatusCodeDELETECustomer" duration-ms="22" started-at="2021-06-01T11:36:04 IST" finished-at="2021-06-01T11:36:04 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyStatusCodeDELETECustomer -->
+        <test-method status="PASS" signature="verifyPayloadCustomersSchema()[pri:5, instance:TestSuites.PositiveTests@5025a98f]" name="verifyPayloadCustomersSchema" duration-ms="20" started-at="2021-06-01T11:36:04 IST" finished-at="2021-06-01T11:36:04 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPayloadCustomersSchema -->
+      </class> <!-- TestSuites.PositiveTests -->
+    </test> <!-- C:/Users/pc/IdeaProjects/RestAPIAutomationFramework -->
+  </suite> <!-- All Test Suite -->
+</testng-results>
