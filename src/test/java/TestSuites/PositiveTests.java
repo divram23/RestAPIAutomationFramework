@@ -4,6 +4,7 @@ import TestConfigurations.BaseTest;
 import io.restassured.RestAssured;
 import io.restassured.parsing.Parser;
 import io.restassured.response.Response;
+import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -12,11 +13,14 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
-
+import java.io.*;
 import java.util.List;
 
 import static io.restassured.RestAssured.*;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.is;
 
 public class PositiveTests extends BaseTest {
 
@@ -58,20 +62,8 @@ public class PositiveTests extends BaseTest {
     }
 
     @Test (priority = 5)
-    public void verifyPayloadCustomersSchema()
+    public void verifyResponseContentType()
     {
-        /*given().
-                when().
-                get("/customers/1").
-                then().
-                log().ifValidationFails().
-                assertThat().
-                statusCode(200).
-                and().
-                contentType("");
-*/
-               // body(matchesJsonSchemaInClasspath("customers_schema.json"));
-
         Response payloadResponse = RestAssured.get("/customers/1");
         String contentType = payloadResponse.header("Content-Type");
         //System.out.println(contentType);
@@ -80,10 +72,9 @@ public class PositiveTests extends BaseTest {
 
         String responseBody = payloadResponse.getBody().asString();
         Assert.assertEquals(responseBody.contains("firstname"), true);
-
     }
 
-    @Test
+    @Test (priority = 6)
     public void verifyCreateAndRetrievingCustomerRecord() throws ParseException {
         RequestSpecification request = RestAssured.given();
 
@@ -104,9 +95,43 @@ public class PositiveTests extends BaseTest {
 
     }
 
+    @Test (priority = 7)
+    public void verifyPayloadCustomersSchema()
+    {
+        given().
+                when().
+                get("/customers/1").
+                then().
+                log().ifValidationFails().
+                assertThat().
+                statusCode(200).
+                and().
+                contentType("").
+                body(matchesJsonSchemaInClasspath("customers_schema.json"));
+    }
 
+    @Test (priority = 8)
+    public void verifyResponseMatchesFileData() throws IOException, ParseException {
 
+        JSONParser parser = new JSONParser();
+        JSONObject data = (JSONObject) parser.parse(new FileReader("src/test/resources/Customer2.json"));
 
+        Response response = get("/customers/2");
+        String responseBody = response.asString();
 
+        JSONObject body = (JSONObject) parser.parse(responseBody);
 
+        Assert.assertEquals(data.equals(body), true);
+    }
+
+    @Test (priority = 9)
+    public void verifyValidatableResponse() throws ParseException {
+
+        ValidatableResponse res = given()
+                .when()
+                .get("/customers/2")
+                .then();
+
+       res.assertThat().statusCode(200);
+    }
 }
